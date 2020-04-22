@@ -7,7 +7,9 @@
 
 =end
 
-
+require 'rubygems'
+require 'bundler/setup'
+require 'nokogiri'
 
 def main
     print_array(may_array)
