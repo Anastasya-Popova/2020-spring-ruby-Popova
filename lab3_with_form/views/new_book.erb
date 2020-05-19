@@ -1,0 +1,42 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Menu:</li>
+      <li><a href="/">Main page</a></li>
+      <li class="is-active"><a>Add a new book</a></li>
+      <li><a href="/statistics">Show statistics</a> </li>
+    </ul>
+  </div>
+</div>
+
+
+<div class="row column text-center">
+    <h3>Enter a new book</h3>
+</div>
+  
+<div class="large-12 cell">
+  <% form({ method: :post }, { obj: @params }) do |f| %>  
+    <form method="post">
+      <div class="grid-container">
+        <div class="grid-x grid-padding-x">
+            <div class="large-12 cell">
+              <%= f.input(:autor, type: :text, placeholder: "Jack London", label: "Autor") %>
+            </div> 
+            <div class="large-12 cell">
+              <%= f.input(:title, type: :text, placeholder: "White Fang", label: "Tilte") %>
+            </div>
+            <div class="large-12 cell">
+              <%= f.input(:date, type: :text, placeholder: "2020-02-15", label: "Date of reading") %>
+            </div>
+        </div>
+      </div>
+      <div class="row column text-center">
+          <div class="large-12 cell">
+            <%= f.button(value: "Save", class: "button success") %>
+          </div>
+      </div>
+      </form>
+  <% end %> 
+</div>
+  
+  
