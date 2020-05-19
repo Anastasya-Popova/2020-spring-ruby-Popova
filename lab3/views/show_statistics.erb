@@ -1,0 +1,51 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Menu:</li>
+      <li><a href="/">Main page</a></li>
+      <li><a href="/new">Add a new book</a></li>
+      <li class="is-active"><a>Show statistics</a> </li>
+    </ul>
+  </div>
+</div>
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+      
+        <div class="row column text-center">
+           <h3>Choose year</h3>
+        </div>
+        <div class="row column text-center">
+          <form >
+            <div class="button-group align-spaced">
+              <% @list_years.each do |year|%>
+                  <input  name="year" type="submit" value="<%=  year %>" class="button" >
+              <%end%>
+            </div>
+         </form>
+        </div>
+
+      <% if !@list_months.find_all{ |x| x != 0 }.empty? %>
+        <div class="row column text-center">
+           <h3>Statistics for <%=  @this_year%> year</h3>
+        </div>
+        <table>
+         <tr>
+            <th>Months</th>
+            <% @months_names.each do |months_name| %>
+              <td><%=months_name%></td>
+            <% end %>
+          </tr>
+          <tr>
+            <th>Number of books read</th>
+            <% @list_months.each do |months| %>
+              <td><%=months%></td>
+            <% end %>
+          </tr>
+        </table>
+      <% end %>
+    </div>
+  </div>
+
+

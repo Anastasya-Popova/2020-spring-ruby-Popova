@@ -1,0 +1,41 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+        <li class="menu-text">Menu:</li>
+        <li class="is-active"><a>Main page</a></li>
+        <li><a href="/new">Add a new book</a></li>
+        <li><a href="/statistics">Show statistics</a> </li>
+    </ul>
+  </div>
+</div>
+
+<div class="row column text-center">
+    <h3>List of books</h3>
+</div>
+
+<div class="grid-container">
+  <div class="grid-x grid-padding-x">
+    <div class="large-12 cell">
+        <table>
+          <thead>
+            <tr>
+              <th>Date of reading</th>
+              <th>Autor «Tilte»</th>
+            </tr>
+          </thead>
+          <tbody>
+            <% @list_books.each do |book| %>
+              <tr>
+                <td><%=book.date %></td>
+                <td><%=book.autor + ' «' + book.title+'»' %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    </div>
+  </div>
+</div>
+
+<div class="row column text-center">
+    <a href="/new" class="button">Add a new book</a>
+</div>

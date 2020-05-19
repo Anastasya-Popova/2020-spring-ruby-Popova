@@ -1,0 +1,58 @@
+<div class="top-bar">
+  <div class="top-bar-left">
+    <ul class="menu">
+      <li class="menu-text">Menu:</li>
+      <li><a href="/">Main page</a></li>
+      <li class="is-active"><a>Add a new book</a></li>
+      <li><a href="/statistics">Show statistics</a> </li>
+    </ul>
+  </div>
+</div>
+
+
+
+<% if @params && !@params[:errors].empty? %>
+  <div class="large-12 cell callout">
+    <p>Errors of the form:</p>
+    <ul>
+      <% @params[:errors].each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  
+  
+<div class="row column text-center">
+    <h3>Enter a new book</h3>
+</div>
+  
+  
+<div class="large-12 cell">
+  <form method="post">
+    <div class="grid-container">
+      <div class="grid-x grid-padding-x">
+        <div class="large-12 cell">
+            <label>Autor
+              <input type="text" placeholder="Jack London" name="autor" value="<%= @params && @params[:autor] %>">
+            </label>
+          </div>
+           <div class="large-12 cell">
+            <label>Tilte
+              <input type="text" placeholder="White Fang" name="title" value="<%= @params && @params[:title] %>">
+            </label>
+          </div>
+          <div class="large-12 cell">
+            <label>Date of reading
+              <input type="text" placeholder="2019-02-17" name="date" value="<%= @params && @params[:date] %>">
+            </label>
+          </div>
+        </div>
+      </div>
+      <div class="row column text-center">
+         <input  type="submit" value="Save" class="button">
+      </div>
+    </form>
+  </div>
+  
+  
